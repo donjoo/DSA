@@ -12,7 +12,9 @@ Scan through the unsorted data looking for the smallest remaining element thensw
 #     Space Complexity: O(1)(in-place sorting)
 
 
-Key Points
+
+
+Key Pointss
 
     In-Place: Selection sort does not require additional storage, 
     as it sorts the list in place.
@@ -122,8 +124,14 @@ def selection_sort_tuples(arr):
     return arr
 
 
+
+
 arr = [(1,3),(4,1),(2,5),(5,0),(3,2)]
+
 print(selection_sort_tuples(arr))
+
+
+
 
 
 

@@ -16,9 +16,7 @@ Recursion
         # Recursive functions are challenging to debug.
         # The reasoning behind recursion can sometimes be tough to think through.
 
-    
-    
-    
+        
     """
 
 
@@ -163,18 +161,50 @@ print(arrr(arr))
 
 
 
-def powerset_recursive(s):
+# def powerset_recursive(s):
+#     if not s:
+#         return [set()]
+#     print(s,'s')
+#     elem = s.pop()
+#     subsets = powerset_recursive(s)
+#     print(subsets,'subsets')
+#     s.add(elem)
+
+#     new_subsets = [subset | {elem} for subset in subsets]
+#     print(new_subsets,'new_subsets')
+#     return  subsets + new_subsets
+
+# s = {1,2,3}
+# print(powerset_recursive(s))
+
+
+
+
+def power_set_recursive(s):
     if not s:
-        return [set()]
-    print(s,'s')
-    elem = s.pop()
-    subsets = powerset_recursive(s)
-    print(subsets,'subsets')
-    s.add(elem)
+        return [[]]
+    
+    first_elem = s[0]
+    rest = s[1:]
 
-    new_subsets = [subset | {elem} for subset in subsets]
-    print(new_subsets,'new_subsets')
-    return  subsets + new_subsets
+    subsets = power_set_recursive(rest)
+    print(subsets)
 
-s = {1,2,3}
-print(powerset_recursive(s))
+    return subsets + [[first_elem] + subset for subset in subsets]
+
+s = [1,2,3]
+print("Power Set (Recursive):", power_set_recursive(s))
+
+
+
+
+
+
+
+
+
+
+
+''''________________------------------------________________________--------------------------_______________________'''
+
+

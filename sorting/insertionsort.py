@@ -2,7 +2,9 @@
 """
 
 
-Insertion sort is a simple and intuitive sorting algorithm that builds the final sorted array one element at a time. It is much like sorting playing cards in your hands: you take one card at a time and place it in its correct position relative to the already sorted cards.
+Insertion sort is a simple and intuitive sorting algorithm that builds the final sorted array 
+one element at a time. It is much like sorting playing cards in your hands: you take one card at a 
+time and place it in its correct position relative to the already sorted cards.
 
 Time Complexity
 
@@ -14,6 +16,55 @@ Space Complexity
 
     Space Complexity: O(1)O(1) (in-place sorting)
 """
+
+
+
+
+
+
+def Insertionsort(list):
+    for i in range(1,len(list)):
+        key = list[i]
+        j = i - 1
+
+        while key < list[j] and j >= 0:
+            list[j + 1] = list[j]
+            j -= 1
+
+        list[j + 1] = key 
+
+
+list1 = [2,4,7,3,1,5]
+Insertionsort(list1)
+print(list1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def Insertionsort(my_list):
     for index in range(1,len(my_list)):
         current_element = my_list[index]

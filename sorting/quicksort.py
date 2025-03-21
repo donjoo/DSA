@@ -100,7 +100,7 @@ Space Complexity
 # print(list1)
 
 
-
+list1 = [56,23,1,32,21,8]
 def pivot_point(list1,first,last):
     pivot = list1[last]
     left = first
@@ -111,7 +111,7 @@ def pivot_point(list1,first,last):
             print(list1[left],'left')
             left = left+1
         while left <= right and list1[right] >= pivot:
-            print(list1[right]),'right'
+            print(list1[right],'right')
             right = right-1
         if right < left:
             break
@@ -131,7 +131,7 @@ def quicksort(list1,first,last):
         quicksort(list1,first,p-1)
         quicksort(list1,p+1,last)
 
-list1 = [56,23,76,32,21,8]
+list1 = [56,23,1,32,21,8]
 n = len(list1)
 quicksort(list1,0,n-1)
 print(list1)

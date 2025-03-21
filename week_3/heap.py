@@ -1,39 +1,39 @@
-# hepify
-# wiliems method
-# heapq
+# # hepify
+# # wiliems method
+# # heapq
 
-import heapq
+# import heapq
 
-heap = [4,2,67]
-heapq.heapify(heap)
+# heap = [4,2,67]
+# heapq.heapify(heap)
 
-heapq.heappush(heap,10)
-heapq.heappush(heap,22)
-heapq.heappush(heap,12)
-heapq.heappush(heap,13)
+# heapq.heappush(heap,10)
+# heapq.heappush(heap,22)
+# heapq.heappush(heap,12)
+# heapq.heappush(heap,13)
+# print(heap,'dfsfs')
 
+# heapq.heappush(heap,10)
+# print(heap)
 
-heapq.heappush(heap,10)
-print(heap)
+# heapq.heappop(heap)
 
-heapq.heappop(heap)
-
-print(heapq.heappushpop(heap,99))   
-print(heap)
-print(heapq.heapreplace(heap,999))
-print(heap)
-print(heapq.nsmallest(3,heap))
-print(heapq.nlargest(2,heap))
-
-
+# print(heapq.heappushpop(heap,99))   
+# print(heap)
+# print(heapq.heapreplace(heap,999))
+# print(heap)
+# print(heapq.nsmallest(3,heap))
+# print(heapq.nlargest(2,heap))
 
 
 
-list1 = [(1,'ria'),(4,'siaaa'),(3,'jiya')]
-heapq.heapify(list1)
-print(list1)
-for i in range(len(list1)):
-    print(heapq.heappop(list1))
+
+
+# list1 = [(1,'ria'),(4,'siaaa'),(3,'jiya')]
+# heapq.heapify(list1)
+# print(list1)
+# for i in range(len(list1)):
+#     print(heapq.heappop(list1))
 
 
 
@@ -47,7 +47,7 @@ class Heap:
         self.heap = arr[:]
         n=len(self.heap)
         for i in range(n//2-1,-1,-1):
-            print(i,n)
+            print(i,n,'hhhhhhh')
             self.heapify(i,n)
 
     def insert(self,value):

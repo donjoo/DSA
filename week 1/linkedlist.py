@@ -65,6 +65,7 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = n.ref
             n.ref = new_node
+            
     def insert_empty(self,data):
         if self.head is None:
             new_node = Node(data)
@@ -170,6 +171,64 @@ class LinkedList:
             while n.ref is not None:
                 n=n.ref
             n.ref = self.head
+
+
+
+
+    def sorted_merge(self,a,b):
+
+        if a is None:
+            return b
+        if b is None:
+            return a
+        
+        if a.data <= b.data:
+            result = a
+            result.next = self.sorted_merge(a.ref,b)
+        else:
+            result = b
+            result.ref = self.sorted_merge(a,b.next)
+
+        return result
+
+
+    def get_middle(self,head):
+        if head is None:
+            return head
+        
+        slow = head 
+        fast = head
+
+        while fast.ref and fast.ref.ref:
+            slow = slow.ref 
+            fast = fast.ref.ref
+
+        return slow
+    
+
+
+    def merge_sort(self,head):
+
+        if head is None or head.ref is None:
+            return head
+        
+        middle = self.get_middle(head)
+        next_to_middle = middle.ref
+
+
+        middle.ref = None
+
+        left = self.merge_sort(head)
+        right = self.merge_sort(next_to_middle)
+
+
+        sorted_list = self.sorted_merge(left, right)
+
+        return sorted_list
+    
+
+    def sort(self):
+        self.head = self.merge_sort(self.head)
 
 
 

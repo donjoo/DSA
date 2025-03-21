@@ -26,10 +26,6 @@ def DFS(node,visited,graph):
             DFS(i,visited,graph)
 
 
-
-
-
-
 from collections import deque
 
 def bfs(graph, start_vertex):
@@ -67,5 +63,6 @@ add_edge("B","D")
 add_edge("C","D")
 add_edge("E","D")
 print(graph)
-DFS("A",visited,graph)
+print('ffffffffffffffffff')
+DFS("C",visited,graph)
 bfs(graph,'A')

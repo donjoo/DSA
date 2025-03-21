@@ -28,8 +28,37 @@ def DFS(node,visited,graph):
 
 
 
+def DFS_iter(node,graph):
+    visited = set()
+    if node not in graph:
+        print('nottttt')
+        return
+    stack = []
+    stack.append(node)
+    while stack:
+        current = stack.pop()
+        if current not in visited:
+            print(current)
+            visited.add(current)
+            for i in graph[current]:
+                stack.append(i)
 
 
+def DFS_iter(node,graph):
+    visited = set()
+    if node not in graph:
+        print('nott')
+        return
+    stack = []
+    stack.append(node)
+    while stack:
+        current = stack.pop()
+        if current not in visited:
+            print(current)
+            visited.add(current)
+            for i in graph[current]:
+                stack.append(i)
+                
 
 
 
@@ -52,3 +81,10 @@ add_edge("C","D")
 add_edge("E","D")
 print(graph)
 DFS("A",visited,graph)
+
+
+
+
+
+
+

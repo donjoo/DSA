@@ -1,3 +1,37 @@
+
+
+'''
+Full Binary Tree: Every node has 0 or 2 children. No node has only one child.
+
+
+Perfect Binary Tree: All the internal nodes have two children, and all leaves are at the same level.
+
+
+Complete Binary Tree: All levels are fully filled except possibly the last one, and all nodes in the last level are as far left as possible.
+
+
+Skewed Binary Tree: A tree in which all nodes have only one child (either left or right).
+
+
+Expression Trees: Used to evaluate mathematical expressions where leaves are operands and internal nodes are operators.
+Huffman Trees: Used for efficient data compression, like in Huffman encodin
+
+
+
+
+
+
+'''
+
+
+
+
+
+
+
+
+
+
 class BST:
     def __init__(self,key):
         self.key = key
@@ -263,7 +297,8 @@ class BSTT:
 
     
 
-    def delete(self,data,curr):
+ def delete(self,data,curr):
+        print(curr,'currrrrrrrrrrrrrrrrrrrrrrrr')
         if self.key is None:
             print("tree is empty")
             return
@@ -305,7 +340,6 @@ class BSTT:
             self.key = node.key
             self.rchild = self.rchild.delete(node.key,curr)
         return self
-    
 
 
 

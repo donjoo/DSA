@@ -12,6 +12,9 @@ Performance
 
 Advantages and Disadvantages
 
+
+
+
     Advantages:
         Stable sorting algorithm (preserves the relative order of equal elements).
         Efficient and predictable O(nlog⁡n)O(nlogn) performance.
@@ -23,19 +26,6 @@ Advantages and Disadvantages
 
 
 """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -72,7 +62,9 @@ def mergesort(list1):
             k+=1
 
 
-                 
+
+
+
 
 arr = [3,654,2,6,4,12,7]
 mergesort(arr)

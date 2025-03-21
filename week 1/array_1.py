@@ -6,9 +6,9 @@ jagged_array = [
     [6,7,8,9]
 ] 
 
-# print(jagged_array[0])
-# print(jagged_array[1][1])
-# print(jagged_array[2][-1])
+print(jagged_array[0])
+print(jagged_array[1][1])
+print(jagged_array[2][-1])
 
 # for row in jagged_array:
 #     for element in row:

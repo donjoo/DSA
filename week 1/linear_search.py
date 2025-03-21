@@ -1,3 +1,17 @@
+
+'''
+It works by checking each element in the array sequentially, 
+from the beginning to the end, until it finds the target or 
+reaches the end of the list.
+'''
+
+
+
+
+
+
+
+
 def search(list,key):
     list2=[]
     flag = False
@@ -40,3 +54,13 @@ print("Index of", target, ":", linear_search(arr, target))
 arr = [1, 3, 5, 7, 9]
 target = 8
 print("Index of", target, ":", linear_search(arr, target)) 
+
+
+
+
+
+
+
+
+
+
