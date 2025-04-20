@@ -187,7 +187,7 @@ class LinkedList:
             result.next = self.sorted_merge(a.ref,b)
         else:
             result = b
-            result.ref = self.sorted_merge(a,b.next)
+            result.ref = self.sorted_merge(a,b.ref)
 
         return result
 
