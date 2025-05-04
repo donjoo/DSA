@@ -1,14 +1,20 @@
 """
-Merge sort is a classic divide-and-conquer algorithm used for sorting arrays or lists. It's known for its stable performance and guaranteed O(nlog⁡n)O(nlogn) time complexity, making it efficient for large datasets. Here’s a detailed explanation of how merge sort works:
+Merge sort is a classic divide-and-conquer algorithm used for sorting arrays or lists. 
+It's known for its stable performance and guaranteed O(nlog⁡n)O(nlogn) time complexity, 
+making it efficient for large datasets. Here’s a detailed explanation of how merge sort works:
 
 
-The merge operation is the key part of merge sort where two sorted arrays are combined into a single sorted array. It involves comparing elements from both arrays and appending them to a new array in sorted order.
+The merge operation is the key part of merge sort where two sorted arrays are combined into a single 
+sorted array. It involves comparing elements from both arrays and appending them to a new array in 
+sorted order.
 
 
 Performance
 
-    Time Complexity: Merge sort guarantees O(nlog⁡n)O(nlogn) time complexity in all cases, making it suitable for large datasets.
-    Space Complexity: Merge sort requires additional space proportional to the size of the input array for storing temporary sublists during the merge phase, resulting in O(n)O(n) space complexity.
+    Time Complexity: Merge sort guarantees O(nlog⁡n)O(nlogn) time complexity in all cases, making 
+    it suitable for large datasets.
+    Space Complexity: Merge sort requires additional space proportional to the size of the input 
+    array for storing temporary sublists during the merge phase, resulting in O(n)O(n) space complexity.
 
 Advantages and Disadvantages
 

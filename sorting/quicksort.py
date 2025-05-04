@@ -134,7 +134,7 @@ def quicksort(list1,first,last):
 list1 = [56,23,1,32,21,8]
 n = len(list1)
 quicksort(list1,0,n-1)
-print(list1)
+print(list1) 
 
 # 32,23,76,56,8
 
