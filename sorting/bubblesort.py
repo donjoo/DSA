@@ -1,10 +1,11 @@
-""" Bubble Sort is a simple sorting algorithm that repeatedly steps
+"""
+ Bubble Sort is a simple sorting algorithm that repeatedly steps
  through the list to be sorted, compares adjacent items, and swaps them if they 
  are in the wrong order. The process is repeated until the list is sorted. 
  Bubble sort is known for its simplicity but is generally considered 
  inefficient for large lists.
 
- 
+
 
 Time Complexity
 
@@ -34,6 +35,35 @@ Key Points
     Optimized Version: The algorithm can be optimized by stopping early
     if no swaps are made during a pass, indicating that the list is 
     already sorted.
+
+
+When to Use Bubble Sort?
+
+Rarely. It's useful for:
+
+    Teaching sorting basics
+
+    Small datasets where performance doesn't matter
+
+    Checking if a list is nearly sorted (using optimized version)
+
+
+❌ Disadvantages
+
+    Very slow on large datasets
+
+    Performs O(n²) comparisons even for relatively sorted data (unless optimized)
+
+    Not used in production environments
+
+✅ Advantages
+
+    Simple to understand and implement
+
+    Stable sort (preserves the order of equal elements)
+
+    In-place sorting (no extra memory needed)
+
 
 """
 

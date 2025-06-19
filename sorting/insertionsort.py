@@ -15,6 +15,54 @@ Time Complexity
 Space Complexity
 
     Space Complexity: O(1)O(1) (in-place sorting)
+
+
+
+Best case: Already sorted → one pass, no shifts → O(n)
+
+Worst case: Reversed order → lots of shifts → O(n²)
+
+Space Complexity: O(1) — In-place algorithm
+
+
+
+
+✅ Advantages
+
+    Easy to implement
+
+    Efficient for small or nearly sorted arrays
+
+    Stable (preserves order of equal elements)
+
+    Online algorithm: Can sort as elements arrive
+
+❌ Disadvantages
+
+    Not efficient for large datasets
+
+    Performance degrades quickly with size
+
+📚 Real-Life Analogy
+
+Imagine sorting playing cards in your hand:
+
+    Start with one card.
+
+    Pick up the next card and place it in the correct position.
+
+    Repeat until all cards are sorted.
+
+
+
+🧮 Use Cases
+
+    Small arrays
+
+    Nearly sorted data
+
+    Online sorting problems (e.g., inserting elements as they stream in)
+
 """
 
 
@@ -37,30 +85,6 @@ def Insertionsort(list):
 list1 = [2,4,7,3,1,5]
 Insertionsort(list1)
 print(list1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

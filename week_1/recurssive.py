@@ -17,6 +17,13 @@ Recursion
         # The reasoning behind recursion can sometimes be tough to think through.
 
         
+
+  *** If the base case is missing or wrong, recursion will cause:
+
+        Stack overflow / infinite recursion
+
+        Maximum recursion depth error *** 
+
     """
 
 

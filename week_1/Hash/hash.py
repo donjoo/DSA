@@ -5,7 +5,7 @@ class HashTable:
 
     def _hash(self,key):
         return sum(ord(char) for char in str(key)) % self.size
-
+        # return hash(key) % self.size
 
     def insert(self,key,value):
         index = self._hash(key)
@@ -69,5 +69,50 @@ print(ht.get("city"))
 ht.delete("age")
 
 ht.display()
+
+
+
+
+
+
+
+
+
+
+
+
+class HashTable:
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
+
+    def _hash(self, key):
+        return hash(key) % self.size
+
+    def insert(self, key, value):
+        idx = self._hash(key)
+        for i, kv in enumerate(self.table[idx]):
+            if kv[0] == key:
+                self.table[idx][i] = (key, value)
+                return
+        self.table[idx].append((key, value))
+
+    def get(self, key):
+        idx = self._hash(key)
+        for k, v in self.table[idx]:
+            if k == key:
+                return v
+        return None
+
+    def delete(self, key):
+        idx = self._hash(key)
+        for i, (k, _) in enumerate(self.table[idx]):
+            if k == key:
+                del self.table[idx][i]
+                return
+
+
+
+
 
 

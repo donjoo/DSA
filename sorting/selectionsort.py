@@ -31,6 +31,41 @@ the concept of sorting algorithms, and it's not often used in practice
 for large datasets due to its inefficiency.
 
 ot efficient for large datasets due to its O(n2)O(n2) time complexity, 
+
+
+
+✅ Advantages
+
+    Very easy to implement
+
+    Works well for small datasets
+
+    Fewer swaps compared to bubble and insertion sort
+
+    Doesn’t require extra memory (in-place)
+
+❌ Disadvantages
+
+    Inefficient for large lists
+
+    Not stable by default (can be made stable, but requires changes)
+
+    Not adaptive (does not perform better on sorted or nearly sorted data)
+
+
+
+🧮 Use Cases
+
+    Small arrays
+
+    When memory writes are costly (since it minimizes swaps)
+
+    When stability isn’t required
+
+
+
+
+
 """
 
 # num = int(input("how many numbers"))

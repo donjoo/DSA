@@ -17,6 +17,48 @@ Time Complexity
 Space Complexity
 
     Space Complexity: O(log⁡n)O(logn) due to the recursive call stack
+
+
+
+
+🛠️ PIVOT STRATEGIES
+
+    Last element (simple)
+
+    First element
+
+    Middle element
+
+    Random element (prevents worst case)
+
+    Median of three (robust and fast)
+
+
+
+✅ ADVANTAGES OF QUICKSORT
+Advantage	Explanation
+🔥 Very Fast in Practice	Quicksort is one of the fastest sorting algorithms for average cases. It often outperforms other algorithms like Merge Sort and Heap Sort.
+🧠 Efficient Time Complexity	Average and best-case time complexity is O(n log n).
+💾 In-place Sorting	Requires no extra space (unlike Merge Sort), so space complexity is O(log n) (for recursion stack).
+📦 Good Cache Performance	Works well with memory caches due to sequential memory access.
+🧩 Divide-and-Conquer Approach	Can be parallelized and is naturally recursive, making it elegant and modular.
+🔀 Random Pivoting Prevents Worst Case	You can easily avoid worst-case behavior by choosing the pivot randomly.
+
+
+
+❌ DISADVANTAGES OF QUICKSORT
+Disadvantage	Explanation
+💥 Worst Case is O(n²)	If the pivot always picks the largest or smallest element (like in sorted arrays), performance degrades heavily.
+❌ Not Stable	Equal elements may get reordered because it swaps elements around, so it can’t guarantee original order is preserved.
+🌀 Recursive — Risk of Stack Overflow	For very large arrays or bad pivot choices, the recursion can go too deep, causing stack overflow.
+🧠 Harder to Implement In-Place	In-place version (with pointers and partitioning) is more complex than simple sorting algorithms like Bubble or Selection.
+🔁 Performance Depends on Pivot Choice	A poor pivot choice can drastically affect performance, unlike Merge Sort which always guarantees O(n log n).
+
+
+
+
+
+
 """
 
 
