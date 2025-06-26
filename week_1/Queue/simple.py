@@ -68,3 +68,54 @@ class Queue:
 
     def is_empty(self):
         return len(self.queue) == 0
+
+
+
+# 💡 What is a Manual Queue?
+
+# A manual queue is not an official term, but it generally refers to:
+
+#     ✅ A queue implemented manually from scratch, without using built-in data structures like Python's list, deque, or libraries like queue.Queue.
+
+# 📌 Characteristics of a Manual Queue:
+
+#     Uses a fixed-size array (e.g., [None] * size)
+
+#     Maintains front and rear pointers to track insertion and removal
+
+#     Requires manual handling of:
+
+#         Queue overflow (is full)
+
+#         Queue underflow (is empty)
+
+#         Pointer updates
+
+#     Often used to learn core data structures and used in coding interviews
+
+
+
+
+class Queue:
+    def __init__(self,size):
+        self.queue = [None] * size
+        self.front = self.rear = -1
+        self.size = size
+        
+    def enqueue(self,item):
+        if self.rear == self.size - 1:
+            print('Queue is fulll')
+            return
+        if self.front == -1:
+            self.front = 0
+        self.rear += 1
+        self.Queue[self.rear] = item
+        
+    def dequeue(self):
+        if self.front == -1 or self.front > self.rear:
+            print("Queue is empty")
+            return 
+        item = self.queue[self.front]
+        self.front += 1
+        return item
+        
