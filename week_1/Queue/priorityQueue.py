@@ -138,3 +138,12 @@ class MaxPriorityQueueList:
 
     def is_empty(self):
         return len(self.queue) == 0
+
+pq = MaxPriorityQueueList()
+pq.enqueue(2, "Low-priority task")
+pq.enqueue(5, "High-priority task")
+pq.enqueue(3, "Medium-priority task")
+
+while not pq.is_empty():
+    priority, task = pq.dequeue()
+    print(f"Processing {task} (priority: {priority})")
