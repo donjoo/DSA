@@ -25,3 +25,31 @@ print(ana("listen", "silEnt"))
 
 
 # Replace all occurrences of a substring old in string text with a new substring new.
+text = "ababab"
+old = "ab"
+new = "xy"
+n = 2
+# Output: "xyxyxy"
+# Task: Replace the first n occurrences of old with new in text.
+def replace(text,old,new,n):
+    i = 0
+    result = ''
+    count  = 0
+    
+    while i < len(text):
+        if text[i:i+ len(old)] == old and count < n:
+            result += new
+            i += len(old)
+            count += 1
+        else:
+            result += text[i]
+            i += 1
+    return result
+    
+print(replace(text,old,new,n))
+
+
+
+
+
+    

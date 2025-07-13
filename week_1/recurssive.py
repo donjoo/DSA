@@ -24,6 +24,15 @@ Recursion
 
         Maximum recursion depth error *** 
 
+
+
+
+A special form of recursion where the recursive call is the last operation in the function. 
+Python does not optimize tail recursion.
+
+
+
+
     """
 
 
@@ -205,6 +214,24 @@ print("Power Set (Recursive):", power_set_recursive(s))
 
 
 
+# ✅ String Permutations (All possible rearrangements of characters)
+
+#     Given a string, generate all permutations (reorderings) of its characters.
+def permute(s):
+    result = []
+
+    def backtrack(path, remaining):
+        if not remaining:
+            result.append(path)
+            return
+        for i in range(len(remaining)):
+            backtrack(path + remaining[i], remaining[:i] + remaining[i+1:])
+
+    backtrack("", s)
+    return result
+
+# Example
+print(permute("abc"))
 
 
 

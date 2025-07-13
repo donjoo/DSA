@@ -1,0 +1,27 @@
+📈 What are Asymptotic Notations?
+They describe the growth behavior of an algorithm as the input size n approaches infinity.
+    In short: How fast does the time or space grow as input grows?
+
+
+🔵 2. Big O Notation (O) — Upper Bound
+📌 Definition:
+    Big O gives the worst-case growth rate of an algorithm.
+It means:
+    "The algorithm will take at most this much time/space."
+🧠 Use Cases:
+    Analyzing worst-case performance
+    Performance guarantees
+
+
+🟢 3. Omega Notation (Ω) — Lower Bound
+📌 Definition:
+    Omega gives the best-case growth rate.
+It means:
+    "The algorithm will take at least this much time/space."
+🧠 Use Cases:
+    Understanding how fast the algorithm can perform in the best scenario
+
+🟡 4. Theta Notation (Θ) — Tight Bound
+📌 Definition:
+    Theta defines an exact (tight) bound.
+    It means the algorithm will take this much time in all cases (best, average, worst).

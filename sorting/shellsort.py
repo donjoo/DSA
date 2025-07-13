@@ -113,9 +113,6 @@ Shell Sort is mostly used:
 
 
 
-
-
-
 def Shellsort(alist):
     gap = len(alist)//2
     while gap >0:
