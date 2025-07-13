@@ -50,6 +50,19 @@ print(replace(text,old,new,n))
 
 
 
+def pallidrome(s):
+    result = set()
+    for i in range(len(s)):
+        for j in range(i+1,len(s)+1):
+            subset = s[i:j]
+            if subset == subset[::-1]:
+                result.add(subset)
+    return result
+    
+print(pallidrome('madam'))
+
+
+
 
 
     
