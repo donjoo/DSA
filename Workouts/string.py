@@ -49,7 +49,7 @@ def replace(text,old,new,n):
 print(replace(text,old,new,n))
 
 
-
+# Return all substrings of a string that are palindromes (case-sensitive, length ≥ 1).
 def pallidrome(s):
     result = set()
     for i in range(len(s)):
@@ -61,8 +61,41 @@ def pallidrome(s):
     
 print(pallidrome('madam'))
 
+# Given a string, return a new string where characters are sorted by descending frequency. 
+# If two characters have the same frequency, keep their original order of appearance.
+def frequency_sort(s):
+    freq = {}
+    for char in s:
+        freq[char] = freq.get(char, 0) + 1
+
+    unique_chars = []
+    for char in s:
+        if char not in unique_chars:
+            unique_chars.append(char)
+
+    unique_chars.sort(key=lambda x: -freq[x])
+
+    result = ''
+    for char in unique_chars:
+        result += char * freq[char]
+
+    return result
 
 
+print(frequency_sort("tree"))     #output : eetr
+print(frequency_sort("abaabc"))   # output: aaabbc
 
-
+# another version
+def sort(s):
+    count = {}
+    new = ''
+    for char in s:
+        count[char] = count.get(char,0) + 1
+    n = len(count)
+    while count:
+        maxx = max(count.items(), key = lambda x: x[1])
+        new += maxx[0] * maxx[1]
+        del count[maxx[0]]
+    return new
+    
     
