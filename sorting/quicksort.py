@@ -43,7 +43,7 @@ Advantage	Explanation
 📦 Good Cache Performance	Works well with memory caches due to sequential memory access.
 🧩 Divide-and-Conquer Approach	Can be parallelized and is naturally recursive, making it elegant and modular.
 🔀 Random Pivoting Prevents Worst Case	You can easily avoid worst-case behavior by choosing the pivot randomly.
-
+    
 
 
 ❌ DISADVANTAGES OF QUICKSORT
