@@ -197,3 +197,93 @@ class BST:
         while current.left:
             current = current.left
         return current
+
+
+    # Check if Valid BST
+    def is_valid_bst(self):
+        def is_valid(node, low, high):
+            if not node:
+                return True
+            if not (low < node.key < high):
+                return False
+            return is_valid(node.left, low, node.key) and is_valid(node.right, node.key, high)
+
+        return is_valid(self.root, float('-inf'), float('inf'))
+
+    # Lowest Common Ancestor
+    def lowest_common_ancestor(self, n1, n2):
+        return self._lca(self.root, n1, n2)
+
+    def _lca(self, root, n1, n2):
+        if not root:
+            return None
+        if n1 < root.key and n2 < root.key:
+            return self._lca(root.left, n1, n2)
+        if n1 > root.key and n2 > root.key:
+            return self._lca(root.right, n1, n2)
+        return root
+
+    # Ceil in BST
+    def find_ceil(self, key):
+        root = self.root
+        ceil = -1
+        while root:
+            if root.key == key:
+                return root.key
+            if key < root.key:
+                ceil = root.key
+                root = root.left
+            else:
+                root = root.right
+        return ceil
+
+    # Floor in BST
+    def find_floor(self, key):
+        root = self.root
+        floor = -1
+        while root:
+            if root.key == key:
+                return root.key
+            if key > root.key:
+                floor = root.key
+                root = root.right
+            else:
+                root = root.left
+        return floor
+
+    # Kth smallest element
+    def kth_smallest(self, k):
+        res = []
+        self._inorder(self.root, res)
+        if 0 < k <= len(res):
+            return res[k-1]
+        return None
+
+    # Kth largest element
+    def kth_largest(self, k):
+        res = []
+        self._reverse_inorder(self.root, res)
+        if 0 < k <= len(res):
+            return res[k-1]
+        return None
+
+    def _reverse_inorder(self, root, res):
+        if root:
+            self._reverse_inorder(root.right, res)
+            res.append(root.key)
+            self._reverse_inorder(root.left, res)
+
+
+# 🌿 Test the BST
+bst = BST()
+for num in [15, 10, 20, 8, 12, 17, 25]:
+    bst.insert(num)
+
+print("Inorder:", bst.inorder())
+print("Search 12:", bst.search(12) is not None)
+print("Level Order:", bst.level_order())
+print("Kth Smallest (3rd):", bst.kth_smallest(3))
+print("Ceil of 13:", bst.find_ceil(13))
+print("Floor of 13:", bst.find_floor(13))
+print("LCA of 8 and 12:", bst.lowest_common_ancestor(8, 12).key)
+print("Valid BST:", bst.is_valid_bst())
