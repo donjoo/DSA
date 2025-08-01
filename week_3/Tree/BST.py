@@ -80,6 +80,107 @@ Result:
 
 
 
+
+Use Case	                                Why BST Works Well
+
+Fast search/insert/delete	                O(log n) time (if balanced)
+Sorted data traversal	                    Inorder gives sorted order
+Range queries / top-K	                    Easily implemented with BST
+Underlying for sets/maps	                Java/C++ STL use balanced BSTs
+Expression parsing	                        Used in compilers
+Auto-complete, prefix matching	            Combined with strings and Tries
+Memory-efficient structures	                With AVL/Splay trees
+
+
+
+🧠 Bonus: When not to use BST?
+Situation	                    Better Alternative
+You need hash-based access	    Use HashMap / dict
+You need prefix search	        Use Trie
+You need fast disk access	    Use B-Tree
+You need min/max in O(1)	    Use Heap
+
+
+
+
+
+
+⚖️ What Is a Balanced Tree?
+
+A Balanced Tree is a binary tree where the difference in height between the left and right subtree of any node is not more than 1.
+
+    ✅ Balance condition:
+    |height(left) - height(right)| ≤ 1 for every node
+
+
+❌ What Is an Unbalanced Tree?
+
+An Unbalanced Tree does not satisfy the balance condition.
+
+    One subtree is significantly deeper than the other.
+
+    Happens when nodes are inserted in sorted order in a normal BST.
+
+🧠 Why Balance Matters?
+Operation	Balanced Tree	Unbalanced Tree
+Search	O(log n)	O(n)
+Insert	O(log n)	O(n)
+Delete	O(log n)	O(n)
+
+✅ Balanced trees ensure fast operations.
+❌ Unbalanced trees cause performance issues.
+🧱 Balanced Trees Examples
+Tree Type	Description
+AVL Tree	Self-balancing BST using rotations
+Red-Black Tree	Used in Java’s TreeMap, C++ STL (set/map)
+B-Trees	Used in databases, optimized for disk storage
+Splay Tree	Self-adjusting BST
+🔄 How Trees Are Balanced?
+✅ By using Rotations after insert/delete:
+
+    Left Rotation
+
+    Right Rotation
+
+    Left-Right / Right-Left Rotation (in AVL Trees)
+
+They restructure the tree to restore the balance condition.
+📌 Analogy
+
+    Balanced Tree: Books stored on well-organized shelves → easy to find one quickly
+
+    Unbalanced Tree: Books thrown in a vertical stack → slow, top-to-bottom search
+
+🚀 Summary Table
+Feature	Balanced Tree	Unbalanced Tree
+Height	log₂(n)	up to n (in worst case)
+Operations	O(log n)	O(n)
+Efficiency	High	Low
+Structure	Evenly distributed	Skewed to one side
+Common Examples	AVL, Red-Black, B-Tree	Plain BST (inserting sorted data)
+Self-adjusting	Yes (with rotations)	No
+✅ Interview Tip:
+
+    ❓Q: How do you make sure a BST stays efficient?
+    ✅ "By keeping it balanced using AVL or Red-Black Tree to ensure operations stay O(log n)."
+
+
+
+
+
+Properties of BST
+🧠 Summary Table
+Property	                    Description
+Left < Root < Right	            Core rule that defines BST
+No Duplicates	                Usually enforced for clean ordering
+Recursive BSTs	                Subtrees are themselves BSTs
+In-Order = Sorted	            Output is ascending if tree is valid
+Search/Insert/Delete	        O(log n) average, O(n) worst-case
+Min/Max	                        Found by traversing left/right edge
+Balanced BSTs	                Keep operations fast by maintaining low height
+Violations	                    Any node breaking the rule invalidates BST
+
+
 '''
 
 
