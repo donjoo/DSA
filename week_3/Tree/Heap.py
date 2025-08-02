@@ -65,18 +65,56 @@ Use Case	                        Why Heap is Used
 
 
 '''
-
-
 class MinHeap:
-    def __init__(self):
-        self.heap = []
+    def __init__(self, array=None):
+        self.heap = array[:] if array else []
+        if self.heap:
+            self.build_heap()
+
+    def _left(self, i): return 2 * i + 1
+    def _right(self, i): return 2 * i + 2
+    def _parent(self, i): return (i - 1) // 2
+
+    def build_heap(self):
+        for i in reversed(range(len(self.heap) // 2)):
+            self._heapify_down(i)
+
+    def _heapify_down(self, i):
+        n = len(self.heap)
+        while True:
+            smallest = i
+            left = self._left(i)
+            right = self._right(i)
+
+            if left < n and self.heap[left] < self.heap[smallest]:
+                smallest = left
+            if right < n and self.heap[right] < self.heap[smallest]:
+                smallest = right
+
+            if smallest != i:
+                self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
+                i = smallest
+            else:
+                break
+
+    def _heapify_up(self, i):
+        while i > 0:
+            parent = self._parent(i)
+            if self.heap[i] < self.heap[parent]:
+                self.heap[i], self.heap[parent] = self.heap[parent], self.heap[i]
+                i = parent
+            else:
+                break
 
     def insert(self, val):
         self.heap.append(val)
         self._heapify_up(len(self.heap) - 1)
 
+    def peek(self):
+        return self.heap[0] if self.heap else None
+
     def extract_min(self):
-        if len(self.heap) == 0:
+        if not self.heap:
             return None
         if len(self.heap) == 1:
             return self.heap.pop()
@@ -86,29 +124,20 @@ class MinHeap:
         self._heapify_down(0)
         return root
 
-    def _heapify_up(self, i):
-        while i > 0:
-            parent = (i - 1) // 2
-            if self.heap[i] < self.heap[parent]:
-                self.heap[i], self.heap[parent] = self.heap[parent], self.heap[i]
-                i = parent
-            else:
-                break
+    def delete(self, index):
+        if index >= len(self.heap):
+            return None
+        self.heap[index] = self.heap[-1]
+        self.heap.pop()
+        self._heapify_down(index)
+        self._heapify_up(index)
 
-    def _heapify_down(self, i):
-        n = len(self.heap)
-        while True:
-            smallest = i
-            left = 2*i + 1
-            right = 2*i + 2
-            
-            if left < n and self.heap[left] < self.heap[smallest]:
-                smallest = left
-            if right < n and self.heap[right] < self.heap[smallest]:
-                smallest = right
-            
-            if smallest != i:
-                self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
-                i = smallest
-            else:
-                break
+    def size(self):
+        return len(self.heap)
+
+    def heap_sort(self):
+        result = []
+        temp = MinHeap(self.heap[:])
+        while temp.size() > 0:
+            result.append(temp.extract_min())
+        return result
