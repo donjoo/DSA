@@ -102,6 +102,29 @@ class Graph:
                         stack.append(neighbour)
         return order
          
+
+           
+    def shortest_path_unweighted(self,start, target):
+        from collections import deque 
+        if not start in self.adj_list or target not in self.adj_list:
+            raise ValueError("nt present")
+        
+        visited = set()
+        queue = deque([(start,[start])])
+        
+        
+        while queue:
+            node,path = queue.popleft()
+            if node == target:
+                return path
+            if node not in visited:
+                visited.add(node)
+                for neighbour in self.adj_list[node]:
+                    if isinstance(neighbour,tuple):
+                        neighbour = neighbour[0]
+                    if not neighbour in visited:
+                        queue.append((neighbour, path + [neighbour]))
+        return None
          
 g = Graph()
 g.add_node("A")
