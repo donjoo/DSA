@@ -137,7 +137,7 @@ def preorder_iterative(root):
         return 
     stack = [root]
     while stack:
-        node.stack.pop()
+        node = stack.pop()
         print(node.value, end=' ')
         if node.right:
             stack.append(node.right)

@@ -43,6 +43,7 @@ Use Case	                        Why Heap is Used
 
 🌱 Heapify
 
+
 Heapify is the process of restoring the heap property starting from a given node.
 There are two ways to apply it:
 
@@ -174,6 +175,8 @@ class MinHeap:
         self.heap[0] = self.heap.pop()
         self._heapify_down(0)
         return root
+
+
 
     def delete(self, index):
         if index >= len(self.heap):

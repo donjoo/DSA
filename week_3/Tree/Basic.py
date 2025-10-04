@@ -15,18 +15,18 @@ A tree is a non-linear hierarchical data structure made up of nodes, where:
 
 
 🔑 Basic Terminology
-Term	Description
-Node	Each element in the tree
-Root	The top-most node (only one root)
-Parent	A node that has one or more children
-Child	A node that descends from another node
-Leaf	A node with no children
-Edge	Connection between nodes
-Height	Max depth from root to any leaf
-Depth	Distance from the root to that node
-Subtree	A tree formed from any node and its descendants
-Siblings	Nodes with the same parent
-Level	The layer of nodes at a certain depth (root = level 0)
+Term	                Description
+Node	                Each element in the tree
+Root	                The top-most node (only one root)
+Parent	                A node that has one or more children
+Child	                A node that descends from another node
+Leaf	                A node with no children
+Edge	                Connection between nodes
+Height	                Max depth from root to any leaf
+Depth	                Distance from the root to that node
+Subtree	                A tree formed from any node and its descendants
+Siblings	            Nodes with the same parent
+Level	                The layer of nodes at a certain depth (root = level 0)
 
 
 
@@ -99,7 +99,8 @@ Classification of Trees – Based on Structure & Node Constraints
 
 🔹 6. Balanced Binary Tree
 
-    A binary tree where the height difference between left and right subtrees of any node is not more than 1.
+    A binary tree where the height difference between left and right 
+    subtrees of any node is not more than 1.
 
     Used to maintain search performance.
 

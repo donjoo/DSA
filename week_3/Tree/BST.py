@@ -107,7 +107,8 @@ You need min/max in O(1)	    Use Heap
 
 ⚖️ What Is a Balanced Tree?
 
-A Balanced Tree is a binary tree where the difference in height between the left and right subtree of any node is not more than 1.
+A Balanced Tree is a binary tree where the difference in height between the left and right subtree 
+of any node is not more than 1.
 
     ✅ Balance condition:
     |height(left) - height(right)| ≤ 1 for every node

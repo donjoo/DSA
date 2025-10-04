@@ -81,23 +81,32 @@ Best For	Search-heavy apps	Insert/Delete-heavy apps
 Complexity	O(log n)	O(log n)
 🧠 How to Explain in a Review
 
-    "A Red-Black Tree is a self-balancing binary search tree that uses color properties to ensure balance. It guarantees that the tree height remains logarithmic, ensuring O(log n) time for search, insertion, and deletion.
-    It allows a bit more flexibility in balancing compared to AVL trees and balances itself using both rotations and recoloring to maintain five strict properties — like no two red nodes in a row and uniform black height on all paths."
+    "A Red-Black Tree is a self-balancing binary search tree that uses color properties 
+    to ensure balance. It guarantees that the tree height remains logarithmic, ensuring 
+    O(log n) time for search, insertion, and deletion.
+    It allows a bit more flexibility in balancing compared to AVL trees and balances itself 
+    using both rotations and recoloring to maintain five strict properties — like no two red 
+    nodes in a row and uniform black height on all paths."
 
 
 
 🌲 What is a Prefix Tree (Trie)?
 
-A Trie (pronounced "try") is a tree-based data structure used to efficiently store and retrieve keys in a dataset of strings, especially for prefix-based searching.
+A Trie (pronounced "try") is a tree-based data structure used to efficiently store and retrieve 
+keys in a dataset of strings, especially for prefix-based searching.
 
-    📌 Each node represents a single character, and a path from the root to a node represents a prefix or a whole word.
+    📌 Each node represents a single character, and a path from the root to a node represents 
+    a prefix or a whole word.
 
 
 
 🌳 What is an M-Way Search Tree?
 
-An M-way search tree is a generalization of a binary search tree (BST) where each node can have up to M - 1 keys and M children.
-An M-Way Search Tree is a generalization of a binary search tree, where each node can store up to M−1 keys and have M children. Keys are stored in sorted order, and children represent key ranges. This reduces the tree height and improves access time, especially for disk-based systems. M-Way trees form the basis of B-trees, which are widely used in databases and file systems for efficient indexing and search.
+An M-way search tree is a generalization of a binary search tree (BST) where each node can have up 
+to M - 1 keys and M children.
+Keys are stored in sorted order, and children represent key ranges. This reduces the tree height and 
+improves access time, especially for disk-based systems. M-Way trees form the basis of B-trees, 
+which are widely used in databases and file systems for efficient indexing and search.
 
 🧠 Why Use M-Way Trees?
 
@@ -150,22 +159,25 @@ Range search	Faster due to linked leaves
 
 
 🧠 B+ Tree vs B-Tree – Comparison Table
-Feature	B-Tree	B+ Tree
-Stores data	In all nodes	Only in leaf nodes
-Internal nodes	Store data & keys	Only store keys
-Leaf node structure	No guaranteed linkage	Usually linked (doubly)
-Range queries	Slower	Faster (sequential scan via linked leaves)
-Search path	Ends at any node (data)	Always ends at leaf
-Use case	General in-memory + disk use	Optimized for disk + range scan
+Feature	                B-Tree	                        B+ Tree
+Stores data	            In all nodes	                Only in leaf nodes
+Internal nodes	        Store data & keys	            Only store keys
+Leaf node structure	    No guaranteed linkage	        Usually linked (doubly)
+Range queries	        Slower	                        Faster (sequential scan via linked leaves)
+Search path	            Ends at any node (data)	        Always ends at leaf
+Use case	            General in-memory + disk use	Optimized for disk + range scan
 
 
 
 
 🌳 What is a Merkle Tree?
 
-A Merkle Tree, also called a Hash Tree, is a binary tree used to efficiently and securely verify the integrity of data.
+A Merkle Tree, also called a Hash Tree, is a binary tree used to efficiently and 
+securely verify the integrity of data.
 
-    📌 Instead of storing values in the nodes, a Merkle Tree stores hashes of data. Each leaf node contains a hash of a data block, and each internal node contains the hash of the concatenation of its child nodes' hashes.
+    📌 Instead of storing values in the nodes, a Merkle Tree stores hashes of data. 
+    Each leaf node contains a hash of a data block, and each internal node contains 
+    the hash of the concatenation of its child nodes' hashes.
 
 ✅ Real-World Uses
 Field	Usage
@@ -178,10 +190,15 @@ Field	Usage
 
     Tamper-proof: Changing a single bit in any block changes its hash → which changes the root
 
-    Efficient verification: You don’t need the full data to verify a part, just the Merkle proof (a few sibling hashes)
+    Efficient verification: You don’t need the full data to verify a part, just the Merkle proof 
+    (a few sibling hashes)
 
-A Merkle Tree is a binary tree where each leaf node contains the hash of a data block, and each internal node contains the hash of the concatenation of its child hashes. It's used for secure and efficient data verification.
-In systems like blockchains, only the Merkle root is stored in the block header. To verify a transaction, we use a Merkle proof — a minimal set of sibling hashes — to recompute and compare the root.
+A Merkle Tree is a binary tree where each leaf node contains the hash of a data block, and each 
+internal node contains the hash of the concatenation of its child hashes. It's used for secure 
+and efficient data verification.
+In systems like blockchains, only the Merkle root is stored in the block header. To verify a 
+transaction, we use a Merkle proof — a minimal set of sibling hashes — to recompute and compare 
+the root.
 This structure enables efficient O(log n) verification and tamper detection, even across large datasets
 
 
