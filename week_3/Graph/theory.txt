@@ -1,0 +1,238 @@
+
+#  🌳 What is a Spanning Tree?
+# Imagine you have a graph = nodes + edges.
+# A spanning tree is just a way to:
+# Connect all the nodes
+# Using the minimum number of edges (V-1)
+# Without forming any cycle
+# 👉 Basically: a tree inside a graph that touches every node.
+#     Vertices = {A, B, C}
+#     Edges = {A-B, B-C, A-C}
+
+# Now, what can be spanning trees?
+# We need V-1 = 2 edges to connect all 3 nodes:
+#     Tree 1: {A-B, B-C}
+#     Tree 2: {A-C, C-B}
+#     Tree 3: {A-B, A-C}
+# See? Multiple spanning trees exist.
+
+
+2. Minimum Spanning Tree (MST)
+A Minimum Spanning Tree is a spanning tree with the minimum possible total edge weight.
+Used in:
+Network design (minimum cable cost).
+Transportation (cheapest path connecting cities).
+
+
+
+
+Algorithms to Find MST
+Two famous ones:
+
+
+
+------------->(a) Kruskal’s Algorithm (Greedy, Union-Find)
+Sort all edges by weight.
+Pick the smallest edge.
+Add it to the MST if it doesn’t form a cycle (use Disjoint Set Union-Find).
+Repeat until you have V-1 edges.
+Time Complexity: O(E log E) (due to sorting).
+
+
+
+------------>(b) Prim’s Algorithm (Greedy, Priority Queue)
+Start from any node.
+At each step, pick the minimum edge that connects a vertex inside MST to one outside.
+Keep adding until all vertices are covered.
+Time Complexity: O(E log V) with min-heap (priority queue).
+
+
+
+
+🔎 Graph Indexing
+Graph indexing is about how we store and access data efficiently in a graph.
+Because graphs can have millions of nodes and edges, searching without an 
+index would be very slow.
+
+
+
+
+1. Vertex-Centric Indexes
+Focus on the nodes (vertices).
+Each vertex maintains an index of its adjacent edges.
+Helps quickly find:
+“What edges are connected to this node?”
+“Who are my neighbors?”
+✅ Use Case:
+Social network: “Find all friends of Alice” → Look up vertex Alice, 
+index directly gives all connected edges (friendships).
+
+
+
+
+
+2. Edge-Centric Indexes
+Focus on the edges themselves.
+Each edge can store information to allow fast traversal in both directions.
+Helps quickly find:
+“What’s the reverse edge?”
+“What edge properties exist between nodes?”
+✅ Use Case
+Road network: “What’s the shortest road between City A and City B?” → Look
+ up edges by weight/distance.
+
+ | Aspect           | Vertex-Centric                                             | Edge-Centric                                                        |
+| ---------------- | ---------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Focus**        | Nodes                                                      | Edges                                                               |
+| **Index stores** | List of outgoing/incoming edges per vertex                 | References to connected vertices per edge                           |
+| **Good for**     | Neighbor queries (friends of a person, links of a webpage) | Path queries, edge properties (shortest road, strongest connection) |
+| **Example**      | Facebook friend list                                       | Road distance between cities                                        |
+
+
+
+
+
+📌 Types of Graphs
+
+1. Unidirectional (Directed Graph / Digraph)
+Edges have a direction (one-way).
+Example: Twitter follows → A → B means A follows B, but B may not follow A.
+
+
+2. Bidirectional (Undirected Graph)
+Edges don’t have direction (two-way).
+Example: Facebook friends → if A is friend with B, then B is also friend with A.
+
+
+
+3. Cyclic Graph
+A graph that contains at least one cycle (path where you can start and 
+come back to the same node).
+
+
+
+4. Disconnected Graph
+Not all vertices are connected → some nodes cannot be reached from others.
+
+
+5. Weighted Graph
+Each edge has a weight/cost/value.
+Example: Road map where edges = roads, weight = distance.
+
+
+6. Unweighted Graph
+All edges are equal (no weight).
+Example: Friendships → no cost, just connection.
+
+
+
+7. Bipartite Graph
+Vertices can be divided into two disjoint sets such that:
+Every edge connects a vertex in Set1 to a vertex in Set2.
+No edge exists within the same set.
+Example: Job matching → People ↔ Jobs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🪙 What is the Greedy Method?
+The Greedy Method is an algorithmic strategy where:
+👉 At each step, you make the locally optimal choice (best-looking choice right now), 
+hoping it leads to a global optimum.
+Always pick what looks best at the moment.
+No backtracking
+Works only when the problem has the Greedy-choice property (local choice = global optimum).
+🎯 Properties for Greedy to Work
+Greedy-choice property → A global optimal solution can be reached by 
+choosing local optimums.
+Optimal substructure → Problem can be broken into smaller subproblems whose 
+solutions can combine to form the overall optimal solution.
+
+
+
+
+🌲 Kruskal’s Algorithm
+
+It’s a Greedy Algorithm used to find the Minimum Spanning Tree (MST) of a graph.
+🧩 How Kruskal’s Works
+Kruskal’s is edge-centric (works with edges, not vertices).
+Steps:
+Sort all edges by increasing weight.
+Pick the smallest edge.
+If adding it forms a cycle → skip it.
+Otherwise, include it in the MST.
+Repeat until you have (V-1) edges (where V = number of vertices).
+✅ Why Greedy?
+Because at each step, Kruskal chooses the smallest edge available 
+(local optimum) and still guarantees a global optimum MST.
+
+
+
+
+
+🌲 Prim’s Algorithm
+Prim’s is also a Greedy Algorithm for MST — but unlike Kruskal (edge-based), Prim’s is 
+vertex-based.
+🧩 How Prim’s Works
+Start from any vertex.
+At each step, choose the minimum weight edge that connects a vertex inside the MST to a 
+vertex outside the MST.
+Repeat until all vertices are included.
+Using Adjacency Matrix + simple search → O(V²)
+Using Adjacency List + Min Heap (Priority Queue) → O(E log V)
+
+
+| Feature        | Kruskal                                    | Prim                                    |
+| -------------- | ------------------------------------------ | --------------------------------------- |
+| Strategy       | **Edge-based** (sort edges, pick smallest) | **Vertex-based** (expand from a vertex) |
+| DS Needed      | Union-Find (DSU)                           | Priority Queue (Min-Heap)               |
+| Works best     | Sparse graphs (few edges)                  | Dense graphs (many edges)               |
+| Starting point | Doesn’t matter                             | Must choose a start vertex              |
+
+
+
+
+🚖 Dijkstra’s Algorithm
+It’s a Greedy Algorithm used to find the shortest path from a single source 
+vertex to all other vertices in a weighted graph (non-negative weights only ✅).
+
+🧩 Idea
+Start at the source vertex.
+Keep track of the minimum distance to each vertex.
+Repeatedly pick the vertex with the smallest distance that hasn’t been finalized yet.
+Update distances to its neighbors if a shorter path is found.
+Repeat until all vertices are processed.
+
+
+
+🔁 Bellman–Ford Algorithm
+It’s a Shortest Path Algorithm like Dijkstra, but more powerful because it works 
+with graphs that may have negative edge weights (as long as there are no negative
+ weight cycles).
+🧩 Idea
+Dijkstra is greedy → always picks the smallest distance seen so far.
+Bellman-Ford uses relaxation:
+Keep relaxing all edges V-1 times (where V = number of vertices).
+Why V-1? Because the longest shortest path in a graph can have at most (V-1) edges.
+Finally, run 1 more iteration:
+If any edge can still be relaxed → there’s a negative weight cycle.
+
+
+🧩 Definition
+Topological sort is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that:
+👉 For every directed edge (u → v), vertex u comes before v in the ordering.
+⚠️ Key Rules
+Only defined for Directed Acyclic Graphs (DAGs).
+If there’s a cycle, no topo order exists.
+A DAG can have multiple valid topological orders.
