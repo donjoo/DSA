@@ -35,7 +35,45 @@
 # for i in range(len(list1)):
 #     print(heapq.heappop(list1))
 
+''''
 
+💡 What is a Heap?
+
+A heap is a specialized binary tree–based data structure that satisfies the heap property.
+
+🧩 Heap Property:
+
+For any given node:
+
+In a Max-Heap, the key of the parent is greater than or equal to the keys of its children.
+
+In a Min-Heap, the key of the parent is less than or equal to the keys of its children.
+
+
+⚙️ Important Properties:
+
+Shape Property:
+It is always a complete binary tree — meaning all levels are completely filled except possibly the last, which is filled from left to right.
+
+Heap Property:
+Each node follows the max/min rule depending on the type of heap.
+
+🧠 Why do we use Heaps?
+
+To quickly access the maximum (in max-heap) or minimum (in min-heap) element — always at the root.
+
+Used for:
+
+Priority Queues
+
+Heap Sort
+
+Graph algorithms (like Dijkstra, Prim’s)
+
+Finding Kth largest/smallest elements
+
+
+'''
 
 
 class Heap:

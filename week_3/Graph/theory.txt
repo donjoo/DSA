@@ -229,6 +229,9 @@ Finally, run 1 more iteration:
 If any edge can still be relaxed → there’s a negative weight cycle.
 
 
+
+
+📚 Topological Sorting (Topo Sort)
 🧩 Definition
 Topological sort is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that:
 👉 For every directed edge (u → v), vertex u comes before v in the ordering.
@@ -236,3 +239,20 @@ Topological sort is a linear ordering of vertices in a Directed Acyclic Graph (D
 Only defined for Directed Acyclic Graphs (DAGs).
 If there’s a cycle, no topo order exists.
 A DAG can have multiple valid topological orders.
+
+
+
+
+🌍 Floyd–Warshall Algorithm
+🧩 Definition
+The Floyd–Warshall Algorithm is a Dynamic Programming algorithm used to find 
+shortest paths between all pairs of vertices in a weighted graph (can handle 
+negative weights but not negative cycles).
+📚 Idea
+
+Let dist[i][j] = shortest distance from vertex i to j.
+Initially:
+dist[i][j] = weight(i,j) if there’s an edge
+dist[i][j] = ∞ if no edge
+dist[i][i] = 0
+Then we try to improve dist[i][j] by allowing intermediate vertices:
